@@ -1,0 +1,3 @@
+Return type is not included in a methods signature.
+
+Method signatures are the name (of method) and parameter types
