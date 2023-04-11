@@ -1,3 +1,5 @@
+//Justin Ho
+
 package CS113.Lab.Apr10New;
 
 // *****************************************************************
@@ -9,6 +11,7 @@ package CS113.Lab.Apr10New;
 // *****************************************************************
 public class Yorkshire extends Dog
 {
+    private int breedWeight = 30;
     public Yorkshire(String name)
     {
         super(name);
@@ -16,8 +19,13 @@ public class Yorkshire extends Dog
     // -------------------------------------------------------------
 // Small bark -- overrides speak method in Dog
 // -------------------------------------------------------------
+    @Override
     public String speak()
     {
         return "woof";
+    }
+    @Override
+    public int avgBreedWeight(){
+        return this.breedWeight;
     }
 }

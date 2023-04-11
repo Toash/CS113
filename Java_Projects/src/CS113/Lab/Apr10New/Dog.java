@@ -1,3 +1,4 @@
+//Justin Ho
 package CS113.Lab.Apr10New;
 
 // ****************************************************************
@@ -6,7 +7,7 @@ package CS113.Lab.Apr10New;
 // A class that holds a dog's name and can make it speak.
 //
 // ****************************************************************
-public class Dog
+public abstract class Dog
 {
     protected String name;
     // ------------------------------------------------------------
@@ -30,4 +31,6 @@ public class Dog
     {
         return "Woof";
     }
+
+    public abstract int avgBreedWeight();
 }

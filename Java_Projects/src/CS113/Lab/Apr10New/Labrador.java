@@ -1,3 +1,5 @@
+//Justin Ho
+
 package CS113.Lab.Apr10New;
 
 // ****************************************************************
@@ -14,11 +16,13 @@ public class Labrador extends Dog
     private int breedWeight = 75;
     public Labrador(String name, String color)
     {
+        super(name);
         this.color = color;
     }
     // ------------------------------------------------------------
 // Big bark -- overrides speak method in Dog
 // ------------------------------------------------------------
+    @Override
     public String speak()
     {
         return "WOOF";
@@ -26,8 +30,9 @@ public class Labrador extends Dog
     // ------------------------------------------------------------
 // Returns weight
 // ------------------------------------------------------------
-    public static int avgBreedWeight()
+    @Override
+    public int avgBreedWeight()
     {
-        return breedWeight;
+        return this.breedWeight;
     }
 }
