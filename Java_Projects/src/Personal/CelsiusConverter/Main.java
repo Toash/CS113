@@ -39,8 +39,8 @@ public class Main {
         panel.add(outputLabel);
         frame.add(panel);
 
-        // Update frame
-        frame.pack();
+
+        frame.pack(); // Resize frame
         frame.setVisible(true);
 
 

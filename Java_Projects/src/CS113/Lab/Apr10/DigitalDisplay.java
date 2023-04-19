@@ -27,6 +27,8 @@ package CS113.Lab.Apr10;//        Clocks are a standard thing to animate—they 
 //
 // A simple rectangular display of a single number
 //***************************************************
+
+//GUI
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

@@ -11,19 +11,69 @@ import javax.swing.*;
 public class CountDown extends JApplet
 {
 
+    // Add this to the timer
+    public class CountListener implements ActionListener {
+        private javax.swing.Timer timer;
+        private CountDownPanel panel;
+        private DigitalDisplay display;
+        public CountListener(Timer timer, CountDownPanel panel, DigitalDisplay display){
+
+            this.timer = timer;
+            this.panel = panel;
+            this.display = display;
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            display.decrement(); //decrements the display
+            if(display.getVal()<=0){
+
+                //Stop timer
+                timer.stop();
+
+                // Reset the timer
+
+            } else{
+                panel.paintComponent(frame.getGraphics());
+            }
+        }
+    }
+    private DigitalDisplay display;
 
 
-    private final int DELAY = 200;
-    private Timer timer;
+    //Time between countdowns in ms
+    private final int DELAY = 350;
+
+    //The timer that ticks down
+    private javax.swing.Timer timer;
+
+    // The frame to run the application
+    public static JFrame frame;
+
     // ---------------------------------------------------------
 // Initialize the applet, including the animation.
 // ---------------------------------------------------------
     public void init()
     {
-
-        timer = new Timer (DELAY, null);
+        // Displays graphics for clock
         CountDownPanel countDownPanel = new CountDownPanel(timer);
 
+
+        // What to display on the clock
+        display = countDownPanel.getDisplay();
+        timer = new Timer (DELAY, new CountListener(timer,countDownPanel,display));
+
+        // Create a frame to put the panel on
+        frame = new JFrame("Clock Countdown");
+
+        // Add components to frame
+
+        frame.add(countDownPanel);
+        frame.addMouseListener(new MouseInput(this));
+
+
+        frame.pack();
+        frame.setVisible(true);
     }
     // ---------------------------------------------------------
 // Start the animation when the applet is started.
@@ -40,14 +90,11 @@ public class CountDown extends JApplet
         timer.stop();
     }
 
-    public static void main(String[] args) {
+    public boolean isCountingDown(){
+        return this.timer.isRunning();
+    }
 
-        CountDown countDown = new CountDown();
-
-        countDown.init();
-        countDown.start();
-
-        //countDown.
-
+    public void resetCountdown(){
+        this.display.reset(10);
     }
 }
