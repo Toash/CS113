@@ -12,5 +12,6 @@ package CS113.Homework.HW9;
     {
         Staff personnel = new Staff();
         personnel.payday();
+
     }
  }

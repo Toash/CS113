@@ -5,7 +5,7 @@ package CS113.Homework.HW9;
 //
 // Represents a generic staff member.
 //********************************************************************
-abstract public class StaffMember {
+abstract public class StaffMember implements Payable{
     protected String name;
     protected String address;
     protected String phone;
