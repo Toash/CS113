@@ -1,4 +1,6 @@
-package CS113.Homework.HW9;
+// Justin Ho
+
+package CS113.Homework.HW9.Submit;
 
 //********************************************************************
 // StaffMember.java Author: Lewis/Loftus

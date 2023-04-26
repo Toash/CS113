@@ -1,4 +1,8 @@
-package CS113.Homework.HW9;
+// Justin Ho
+
+package CS113.Homework.HW9.Submit;
+
+import CS113.Homework.HW9.Hourly;
 
 import java.util.Scanner;
 public class TestExceptionsV1 {
